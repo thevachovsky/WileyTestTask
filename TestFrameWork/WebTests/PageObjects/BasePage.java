@@ -32,7 +32,7 @@ public class BasePage {
 
     public final static DropDownList searchTips = new DropDownList(Locators.searchTips,"SearchTips");
 
-    public final static DropDownMenu subjects = new DropDownMenu(Locators.subjects,"Subjects",1);
+    public final static DropDownMenu<DropDownMenu.DropDownMenuOption> subjects = DropDownMenu.getNewInstance(Locators.subjects,"Subjects",1);
 
 
     public static class DropDownMenu<OptionType>{
@@ -93,7 +93,7 @@ public class BasePage {
             void placeMouseCursorOn();
         }
 
-        public DropDownMenu<DropDownMenuOption> getInstance(String locator, String name, int deepOfNestedElements){
+        public static DropDownMenu<DropDownMenuOption> getNewInstance(String locator, String name, int deepOfNestedElements){
             return new DropDownMenu<>(locator, name, deepOfNestedElements);
         }
 
