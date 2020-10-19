@@ -112,11 +112,7 @@ public class SearchResultsPage extends BasePage {
         }
 
         private static boolean checkObookOption(WebElement offer){
-            List<WebElement> searchResults = offer.findElements(By.xpath(Locators.oBookOptionButton));
-            if (searchResults.size() > 0){
-                return true;
-            }
-            return false;
+            return offer.findElements(By.xpath(Locators.oBookOptionButton)).size() > 0;
         }
 
         public static List<String> getOffersNames() throws Exception {
